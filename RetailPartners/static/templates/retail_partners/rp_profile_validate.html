@@ -1,0 +1,70 @@
+<div class="profile" ng-show="vm.retailPartner">
+  <style type="text/css">
+  .angular-google-map-container { height: 640px;}
+  #map_canvas {border: 1px solid black}
+  </style>
+  <div class="alert alert-warning" role="alert" ng-hide="vm.retailPartner.status== 2">
+    <strong>Under Review!</strong> This profile needs admin approval!
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12 col-sm-6">
+        <div class="jumbotron profile__header col-sm-12">
+          <a href="/retail_partner/{{ vm.retailPartner.id }}/edit" class="glyphicon glyphicon-edit" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" ng-click="vm.review_data_entry()" ng-confirm-click="Are you sure this data is erroneous?" class="glyphicon glyphicon-ban-circle" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" ng-click="vm.validate()" ng-confirm-click="Did you check all the fields?" class="glyphicon glyphicon-check" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" ng-click="vm.restore()" ng-confirm-click="Do you want to activate this Retail Partner?" class="glyphicon glyphicon-refresh" style="float: right;font-size: 24px;" ng-show="(vm.retailPartner.status)==6"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="" ng-click="vm.destroy()" ng-confirm-click="Approve delete request?" class="glyphicon glyphicon-trash" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 5"></a>&nbsp;&nbsp;
+          <h2 class="profile__username"> Personal Details </h2>
+            <div class="col-xs-12 col-sm-6">
+              <p class="profile__tagline">Contact Name: {{ vm.retailPartner.contact_name }}</p>
+              <p class="profile__tagline"><a href="mailto:{{vm.retailPartner.email}}" target="_top">Email: {{ vm.retailPartner.email }}</a></p>
+              <p class="profile__tagline">Business Category: {{ vm.retailPartner.retail_location_type }}</p>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <p class="profile__tagline">Business Name: {{ vm.retailPartner.business_name }}</p>
+              <p class="profile__tagline">Contact: {{ vm.retailPartner.contact_number }}</p>
+              <!-- <p class="profile__tagline">Retail Partner Id: {{ vm.retailPartner.id }}</p> -->
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==0">Entity Category: Not asked</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==1">Entity Category: Retail Partner</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==2">Entity Category: Senior Retail Partner</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==3">Entity Category: Executive Retail Partner</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==4">Entity Category: Business Partner</p>
+            </div>
+        </div>
+        <div class="jumbotron profile__header col-sm-12">
+          <h2 class="profile__username"> Address Details </h2>
+            <div class="col-xs-12 col-sm-6">
+              <p class="profile__tagline">Address: {{ vm.retailPartner.address_line_1 }}</p>
+              <p class="profile__tagline">City: {{ vm.retailPartner.city }}</p>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <p class="profile__tagline">State: {{ vm.retailPartner.state + ', ' + vm.retailPartner.country }}</p>
+              <p class="profile__tagline">Zipcode: {{ vm.retailPartner.pin }}</p>
+            </div>
+        </div>
+        <div class="jumbotron profile__header col-sm-12">
+          <h2 class="profile__username"> Additional Info </h2>
+            <div class="col-xs-12 col-sm-6">
+              <p class="profile__tagline">Created by: {{ vm.retailPartner.author.username }}</p>
+              <p class="profile__tagline">Landmark: {{ vm.retailPartner.strategic_advantage }}</p>
+            </div>
+            <div class="col-xs-12 col-sm-6">
+              <p class="profile__tagline">Date Created: {{ vm.retailPartner.created_at | date:'dd-MM-yyyy HH:mm'}}</p>
+              <p class="profile__tagline">Last Updated by: {{ vm.retailPartner.updated_by }}</p>
+
+            </div>
+        </div>
+        <br>
+      </div>
+      <div class="col-xs-12 col-sm-6">
+        <div id="map_canvas">
+          <ui-gmap-google-map center='vm.map.center' zoom="vm.map.zoom" style="height: 400px;">
+          <ui-gmap-marker coords="vm.marker" idkey="vm.retailPartner.id" options='{labelAnchor: "100 0"}'>
+              </ui-gmap-marker>
+          </ui-gmap-google-map>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,111 @@
+<div class="col-sm-8 col-sm-offset-2">
+  <div class="jumbotron profile__header" ng-show="vm.retailPartner">
+    <form role="form" class="settings" ng-submit="vm.update()">
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <label for="settings__contact_name">Contact Name</label>
+          <input type="text" class="form-control" id="settings__contact_name" ng-model="vm.retailPartner.contact_name" placeholder="ex. Mumbai" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+          <label for="settings__business_name">Business Name</label>
+          <input type="text" class="form-control" id="settings__business_name" ng-model="vm.retailPartner.business_name" placeholder="ex. Business Name" />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <label for="settings__email">Email</label>
+        <input type="email" class="form-control" id="settings__email" ng-model="vm.retailPartner.email" placeholder="ex. john@example.com" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+        <label for="settings__contact_number">Contact Number</label>
+        <input type="text" class="form-control" id="settings__contact_number" ng-model="vm.retailPartner.contact_number" placeholder="ex. +919999999999" />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+          <label for="settings__add1">Address Line 1</label>
+        <input type="text" class="form-control" id="settings__add1" ng-model="vm.retailPartner.address_line_1" placeholder="ex. 1600 Amphitheatre Parkway" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+        <label for="settings__add1">Address Line 2</label>
+        <input type="text" class="form-control" id="settings__add1" ng-model="vm.retailPartner.address_line_2" placeholder="ex. Mountain View, CA" />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+        <label for="settings__city">City</label>
+        <input type="text" class="form-control" id="settings__city" ng-model="vm.retailPartner.city" placeholder="ex. Mumbai" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+        <label for="settings__state">State</label>
+        <input type="text" class="form-control" id="settings__state" ng-model="vm.retailPartner.state" placeholder="ex. Maharashtra" />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <label for="settings__country">Country</label>
+          <input type="text" class="form-control" id="settings__country" ng-model="vm.retailPartner.country" placeholder="ex. India" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <label for="settings__pincode">Zipcode</label>
+          <input type="text" class="form-control" id="settings__pincode" ng-model="vm.retailPartner.pin" placeholder="ex. 411001" />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <label for="settings__lat">Latitude</label>
+          <input type="text" class="form-control" id="settings__lat" ng-model="vm.retailPartner.location_latitude" placeholder="ex. 36.7782590" />
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <label for="settings__lon">Longitude</label>
+          <input type="text" class="form-control" id="settings__lon" ng-model="vm.retailPartner.location_longitude" placeholder="ex. -119.4179310" />
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <label for="retail_location_type">Business Category</label>
+          <input type="text" class="form-control" id="retail_location_type" ng-model="vm.retailPartner.retail_location_type" placeholder="eg. Restaurant, Super Market, Jewellers, etc." required>
+        </div>
+        <div class="col-xs-12 col-sm-6">
+            <label for="strategic_advantage">Strategic Advantage</label>
+            <input type="text" class="form-control" id="strategic_advantage" placeholder="eg.Near Eiffel Tower, On the Moon, etc." ng-model="vm.retailPartner.strategic_advantage">
+        </div>
+      </div>
+      <br>
+      <div class="row">
+        <div class="col-xs-12 col-sm-6">
+            <label for="rp_category">Entity Type</label>
+            <br>
+                <select name="rp_category" id="rp_category" ng-model="vm.retailPartner.retail_partner_category">
+                    <option value="" disabled selected>Choose Entity Type</option>
+                    <option value="1">Type - 0</option>
+                    <option value="2">Type - 1</option>
+                    <option value="3">Type - 2</option>
+                    <option value="4">Type - 3</option>
+                    <option value="5">Type - 4</option>
+                    <option value="6">Type - 5</option>
+                </select>
+        </div>
+<!--         <div class="col-xs-12 col-sm-6">
+          <label for="retail_location_type">Images</label>
+                <input type="file" ng-file-model="vm.retailPartner.files" multiple />
+                <input id="inputImage4" type="file" multiple image="vm.retailPartner.files" resize-max-height="480"resize-max-width="320" resize-quality="0.7" />
+        </div> -->
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-sm-12">
+          <center>
+          <button type="submit" class="btn btn-success">Submit</button>
+          <button type="button" class="btn btn-danger" ng-click="vm.destroy()" ng-confirm-click="Are you sure you want to delete this retail Partner?">Deactivate</button>
+          </center>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,94 @@
+<div class="profile">
+    <div class="jumbotron profile__header">
+        <h2 class="profile__username">Approve Requests</h2>
+    </div>
+  <div class="row row-content">
+      <div class="col-xs-12 col-sm-12">
+        <div class="table-responsive">
+            <table class="table table-striped">
+            	<thead>
+            		<tr>
+                        <th class="col-md-2">
+                        	<a href="#" ng-click="sortType = 'contact_name'; sortReverse = !sortReverse">Contact Name
+                        	<span ng-show="sortType == 'contact_name' && !sortReverse" class="fa fa-caret-down"></span>
+    			            <span ng-show="sortType == 'contact_name' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                        <th class="col-md-2">
+                        	<a href="#" ng-click="sortType = 'business_name'; sortReverse = !sortReverse">Business Name
+                        	<span ng-show="sortType == 'business_name' && !sortReverse" class="fa fa-caret-down"></span>
+    			            <span ng-show="sortType == 'business_name' && sortReverse" class="fa fa-caret-up"></span></a>
+                    	</th>
+                        <th class="col-md-2">
+                            <a href="#" ng-click="sortType = 'created_at'; sortReverse = !sortReverse">Date Added
+                            <span ng-show="sortType == 'created_at' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'created_at' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                        <th class="col-md-2">
+                            <a href="#" ng-click="sortType = 'city'; sortReverse = !sortReverse">City
+                            <span ng-show="sortType == 'city' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'city' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                        <th class="col-md-2">
+                            <a href="#" ng-click="sortType = 'status'; sortReverse = !sortReverse">Status
+                            <span ng-show="sortType == 'status' && !sortReverse" class="fa fa-caret-down"></span>
+                            <span ng-show="sortType == 'status' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                	</tr>	
+            	</thead>
+                <tr style="color: #468847;background-color: #dff0d8;border-color: #d6e9c6;">
+                    <td class="col-md-3"><b>Entities Addition Requests</b></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+
+                </tr>
+                <tr ng-repeat="retail_partner in vm.retailPartners | orderBy:sortType:sortReverse| filter:searchPartner" ng-click="vm.openProfile(retail_partner.id);" ng-if="retail_partner.status==1">
+                        <th class="col-md-2">{{retail_partner.contact_name}}</th>
+                        <td class="col-md-2">{{retail_partner.business_name}}</td>
+                        <td class="col-md-2">{{retail_partner.created_at  | date:'dd-MM-yyyy'}}</td>
+                        <td class="col-md-2">{{retail_partner.city}}</td>
+                        <td class="col-md-2">{{retail_partner.status===1 ? "Pending Approval" : "Inactive"}}</td>
+                        <td class="col-md-2">
+                            <a href="" ng-click="vm.review_data_entry($event,retail_partner.id)" ng-confirm-click="Are you sure this data is erroneous?" class="glyphicon glyphicon-ban-circle" style="float: right;font-size: 24px;" ng-show="retail_partner.status== 1"></a>
+                            <a href="" ng-click="vm.validate($event,retail_partner.id)" ng-confirm-click="Did you check all the fields?" class="glyphicon glyphicon-check" style="float: right;font-size: 24px;" ng-show="retail_partner.status== 1"></a>
+                        </td>
+                </tr>
+                <tr style="color: #b94a48;background-color: #f2dede;border-color: #eed3d7;">
+                    <td class="col-md-2"><b>Entities Deletion Requests</b></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+
+                </tr>
+                <tr ng-repeat="retail_partner in vm.retailPartners | orderBy:sortType:sortReverse| filter:searchPartner" ng-click="vm.openProfile(retail_partner.id);" ng-if="retail_partner.status==5">
+                                <th class="col-md-2">{{retail_partner.contact_name}}</th>
+                                <td class="col-md-2">{{retail_partner.business_name}}</td>
+                                <td class="col-md-2">{{retail_partner.created_at  | date:'dd-MM-yyyy'}}</td>
+                                <td class="col-md-2">{{retail_partner.city}}</td>
+                                <td class="col-md-2">{{retail_partner.status===1 ? "Delete Approval" : "Inactive"}}</td>
+                                <td class="col-md-2">
+                                    <a href="" ng-click="vm.destroy($event,retail_partner.id)" ng-confirm-click="Did you check all the fields?" class="glyphicon glyphicon-remove-sign" style="float: right;font-size: 24px;" ng-show="retail_partner.status== 5"></a>
+                                </td>
+                        </tr>
+                <tr style="color: #3a87ad;background-color: #d9edf7;border-color: #bce8f1;">
+                    <td class="col-md-3"><b>Entities Edit Requests</b></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                    <td class="col-md-2"></td>
+                </tr>
+                <tr ng-repeat="retail_partner in vm.retailPartners | orderBy:sortType:sortReverse| filter:searchPartner" ng-click="vm.openProfile(retail_partner.id);" ng-if="retail_partner.status==6">
+                                <th class="col-md-2">{{retail_partner.contact_name}}</th>
+                                <td class="col-md-2">{{retail_partner.business_name}}</td>
+                                <td class="col-md-2">{{retail_partner.created_at  | date:'dd-MM-yyyy'}}</td>
+                                <td class="col-md-2">{{retail_partner.city}}</td>
+                                <td class="col-md-2">{{retail_partner.status===6 ? "Pending Approval" : "Inactive"}}</td>
+                                <td class="col-md-2">
+                                    <a href="" ng-click="vm.restore($event,retail_partner.id)" ng-confirm-click="Do you want to restore the retail partner?" class="glyphicon glyphicon-refresh" style="float: right;font-size: 24px;" ng-show="retail_partner.status== 6"></a>
+                                </td>
+                        </tr>
+            </table>
+      </div>
+  </div>
+</div>

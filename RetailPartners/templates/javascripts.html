@@ -1,0 +1,89 @@
+{% load compress %}
+{% load staticfiles %}
+
+{% compress js %}
+
+<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery.js' %}"></script>
+<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.11.1/jquery.validate.min.js"></script>
+<script type="text/javascript" src="{% static 'bower_components/jquery/dist/jquery-validate.bootstrap-tooltip.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap/dist/js/bootstrap.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/material.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/bootstrap-material-design/dist/js/ripples.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/underscore/underscore.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular/angular.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-route/angular-route.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-cookies/angular-cookies.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/ngDialog/js/ngDialog.js' %}"></script>
+<script type="text/javascript" src="{% static 'lib/snackbarjs/snackbar.min.js' %}"></script>
+<!-- <script src='//maps.googleapis.com/maps/api/js?sensor=false'></script> -->
+<script async src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCUgMi9zpSdwQy1Jn-uAo08EfKJ6uTBTSs&libraries=places"
+  type="text/javascript"></script> 
+<!-- <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places&sensor=false"></script> -->
+
+<!-- <script type="text/javascript" src="{% static 'bower_components/angular-google-maps/lodash.min.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'bower_components/angular-google-maps/angular-simple-logger.min.js' %}"></script>
+<!-- <script type="text/javascript" src="{% static 'bower_components/angular-google-maps/angular-google-maps.min.js' %}"></script> -->
+<script type="text/javascript" src="{% static 'bower_components/angular-google-maps/angular-google-maps-street-view_dev_mapped.min.js' %}"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.js"></script>
+<script src="http://rawgit.com/angular-ui/angular-google-maps/2.0.X/dist/angular-google-maps.js"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/RetailPartners.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/RetailPartners.config.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/RetailPartners.routes.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/authentication.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/services/authentication.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/register.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/authentication/controllers/login.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/layout.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/navbar.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/retail_partners.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/services/retail_partners.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/utils/utils.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/utils/services/snackbar.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/layout/controllers/index.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/retailPartners.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/controllers/retail_partners.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/retailPartner.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/confirmClick.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/ngFileModel.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/imageupload.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/error-src.directive.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/directives/checklist-model.directive.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/controllers/new_retail_partner.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/controllers/retail_partner_validate.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/controllers/retail_partner_profile.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/retail_partners/controllers/retail_partner_data.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/profiles/profiles.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/profiles/services/profile.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/profiles/controllers/profile.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/profiles/controllers/profile-settings.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/profiles/controllers/data-validation.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/mapview/mapview.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/mapview/controllers/mapview.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/city_profiles/city_profiles.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/city_profiles/services/city_profile.service.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/city_profiles/controllers/city_profile.controller.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'javascripts/communication/communication.module.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/communication/controllers/email_client.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/communication/controllers/multiple_email_client.controller.js' %}"></script>
+<script type="text/javascript" src="{% static 'javascripts/communication/services/email_entities.service.js' %}"></script>
+
+
+<script src="https://code.highcharts.com/highcharts.js"></script>
+
+<script type="text/javascript" src="{% static 'bower_components/angular-utils-pagination/dirPagination.js' %}"></script>
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.3.9.min.js"></script>
+
+<!-- <script type="text/javascript" src="{% static 'bower_components/angular-carousel/dist/angular-carousel.js' %}"></script>
+<script type="text/javascript" src="{% static 'bower_components/angular-touch/angular-touch.js' %}"></script>
+ -->
+
+{% endcompress %}

@@ -1,0 +1,106 @@
+<center id="main_content">
+
+<div ng-controller="RetailPartnersController">
+  <div class="row row-content">
+    <div class="col-xs-12 col-md-6">
+      <div id="weekly_rp_distribution">Placeholder for chart</div> 
+    </div>
+    <div class="col-xs-12 col-md-6">
+      <div id="rp_city_distribution">Placeholder for chart</div> 
+    </div>
+  </div>
+  <div class="row row-content">
+      <div class="col-xs-12 col-md-12">
+        <h2>Current Entities</h2>
+      </div>
+  </div>    
+<!-- 	<form>
+	<div class="form-group">
+	  <div class="input-group">
+	    <div class="input-group-addon"><i class="fa fa-search"></i></div>
+	    <input type="text" class="form-control" placeholder="Search Retail Partner" ng-model="searchPartner">
+	  </div>      
+	</div>
+	</form> -->
+  <div class="row row-content">
+      <div class="col-xs-12 col-md-12">
+      <div class="col-md-1" style="padding: 0 !important;margin: 0 !important;">
+        <!-- <button class="btn btn-primary" ng-click="vm.getCheckedList()">Select</button> -->
+        <input type="checkbox" ng-model="vm.itemsChecked" ng-change="vm.toggleCheckList()" style="margin-top:8px;height:20px;width:20px">
+        <a href="" ng-click="vm.destroy()" ng-confirm-click="Do you want to request deletion of this Retail Partner?" class="glyphicon glyphicon-trash" style="font-size: 20px;margin-top:8px; margin-left:12%"></a>&nbsp;&nbsp;
+        <a href="" class="glyphicon glyphicon-envelope" style="font-size: 20px;margin-top:8px; margin-left:6%" ng-dialog="/static/templates/communication/email_template.html" ng-dialog-controller="MultipleEmailClient as vm" ng-click="vm.getCheckedList()"></a>
+      </div>
+      <div div class="col-md-10" style="padding: 0 !important;margin: 0 !important;">
+        <form>
+          <div class="form-group">
+            <div class="input-group" style="padding: 0 !important;margin: 0 !important;">
+              <div class="input-group-addon"><i class="fa fa-search" style="color:#337ab7;font-size:20px;"></i></div>
+              <input type="text" class="form-control" placeholder="Search Entity" ng-model="searchPartner">
+            </div>      
+          </div>
+        </form>
+      </div>
+      </div>
+
+    </div>
+		<div id="facts" class="row row-content">
+        <div class="col-xs-12 col-sm-12">
+            <div class="table-responsive">
+                <table class="table table-striped">
+                	<thead>
+                		<tr>
+                          <th class="col-md-2">
+                          	<a href="#" ng-click="sortType = 'contact_name'; sortReverse = !sortReverse">Contact Name
+                          	<span ng-show="sortType == 'contact_name' && !sortReverse" class="fa fa-caret-down"></span>
+		            <span ng-show="sortType == 'contact_name' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                          <th class="col-md-2">
+                          	<a href="#" ng-click="sortType = 'business_name'; sortReverse = !sortReverse">Business Name
+                          	<span ng-show="sortType == 'business_name' && !sortReverse" class="fa fa-caret-down"></span>
+		            <span ng-show="sortType == 'business_name' && sortReverse" class="fa fa-caret-up"></span></a>
+                        	</th>
+                          <th class="col-md-2">
+                              <a href="#" ng-click="sortType = 'created_at'; sortReverse = !sortReverse">Date Added
+                              <span ng-show="sortType == 'created_at' && !sortReverse" class="fa fa-caret-down"></span>
+                              <span ng-show="sortType == 'created_at' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                          <th class="col-md-2">
+                              <a href="#" ng-click="sortType = 'city'; sortReverse = !sortReverse">City
+                              <span ng-show="sortType == 'city' && !sortReverse" class="fa fa-caret-down"></span>
+                              <span ng-show="sortType == 'city' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                          <th class="col-md-2">
+                              <a href="#" ng-click="sortType = 'author.username'; sortReverse = !sortReverse">Created By
+                              <span ng-show="sortType == 'author.username' && !sortReverse" class="fa fa-caret-down"></span>
+                              <span ng-show="sortType == 'author.username' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                          <th class="col-md-2">
+                              <a href="#" ng-click="sortType = 'status'; sortReverse = !sortReverse">Status
+                              <span ng-show="sortType == 'status' && !sortReverse" class="fa fa-caret-down"></span>
+                              <span ng-show="sortType == 'status' && sortReverse" class="fa fa-caret-up"></span></a></th>
+                    	</tr>	
+                	</thead>
+                    <tr dir-paginate="retail_partner in vm.retailPartners | orderBy:sortType:sortReverse| filter:searchPartner | itemsPerPage: 15" ng-click="openProfile();">
+                        <th class="col-md-2" ng-click="$event.stopPropagation()"><input type="checkbox" checklist-model="vm.checked_items" checklist-value="retail_partner.id">&nbsp;&nbsp;{{retail_partner.contact_name}}</th>
+                        <td class="col-md-2">{{retail_partner.business_name}}</td>
+                        <td class="col-md-2">{{retail_partner.created_at  | date:'dd-MM-yyyy'}}</td>
+                        <td class="col-md-2" ng-click="$event.stopPropagation()"><a href="/retail_partners/{{retail_partner.city}}">{{retail_partner.city}}</a></td>
+                        <td class="col-md-2">{{retail_partner.author.username}}</td>
+                        <!-- <td class="col-md-2">{{retail_partner.status===2 ? "Active" : "Inactive"}}</td> -->
+                        <td class="col-md-2" ng-if="retail_partner.status==2">Active</td>
+                        <td class="col-md-2" ng-if="retail_partner.status==3">Inactive</td>
+                        <td class="col-md-2" ng-if="retail_partner.status==1">Processing</td>
+                        <td class="col-md-2" ng-if="retail_partner.status==4 || retail_partner.status==5 || retail_partner.status==6">Pending Approval</td>
+
+                    </tr>
+
+                </table>
+            </div>  <!-- end of table -->
+            <dir-pagination-controls></dir-pagination-controls>
+        </div>
+    </div>
+	</div>
+<center>
+<a class="btn btn-classy btn-fab btn-raised mdi-content-add btn-add-new-post"
+  href="javascript:void(0)"
+  ng-show="vm.isAuthenticated"
+  ng-dialog="/static/templates/retail_partners/rp_data_entry_map.html"
+  ng-dialog-controller="NewRetailPartnerController as vm"
+  ng-click="vm.loadMap()"></a>
+  </center>

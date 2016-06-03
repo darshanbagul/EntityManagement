@@ -1,0 +1,54 @@
+<style type="text/css">
+    .ngdialog.ngdialog-theme-default .ngdialog-content {
+      max-width: 50% !important;
+      /*width: 450px !important;*/
+    }
+</style>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6"> 
+            <form enctype="multipart/form-data" method="post" class="form-horizontal" role="form" id="rp_data_entry" name="rp_data_entry" ng-submit="vm.submit()">
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-12"> 
+                        <label for="email" class="col-sm-3 control-label">To</label>
+                        <div class="col-sm-9">
+                        <input type="text" class="form-control" id="email" name="email" ng-model="vm.email" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-12"> 
+                        <label for="subject" class="col-sm-3 control-label">Subject</label>
+                        <div class="col-sm-9">
+                        <input type="text" class="form-control" id="subject" name="subject" placeholder="Enter Message Subject" ng-model="vm.subject" required>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-xs-12 col-sm-12"> 
+                        <label for="message" class="col-sm-3 control-label">Message</label>
+                        <div class="col-sm-9">
+                            <textarea class="form-control" style="height:100px" id="message" name="message" placeholder="Enter Your Message" ng-model="vm.message" required></textarea>
+                        </div>
+                    </div>    
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-3 col-sm-offset-5">
+<!--                         <input type="button" class="btn btn-success" ng-click="vm.loadMap()" ng-hide="vm.hideForm" value="Send">
+                        </input> -->
+                        <button type="submit" class="btn btn-success">Send</button>
+<!--                       <input type="button" class="btn btn-success" ng-hide="vm.reviewForm" ng-click="vm.preventSubmit($event)" value="Submit"></input>   -->
+                    </div>
+<!--                     <div class="col-sm-3 col-sm-offset-5">
+                      <input type="button"  ng-show="vm.hideForm" onclick="vm.submit()" value="Submit">
+                        </input>
+                        <input type="button" class="btn btn-success" ng-show="vm.hideForm" ng-click="vm.preventSubmit($event)" value="Submit"></input>
+                    </div> -->
+                </div>
+            </form>
+        </div>
+<!--         <div class="col-sm-12 col-md-6">
+            Map Choose feature
+        </div> -->
+    </div>
+</div>

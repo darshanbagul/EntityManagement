@@ -1,0 +1,69 @@
+<center>
+<form role="form" ng-submit="vm.submit()">
+  <div class="form-group">
+            
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.contact_name" placeholder="Name">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000" >Name</label> -->
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.business_name" placeholder="Business Name">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">Business Name</label> -->
+            </div>
+  </div>
+  <div class="form-group">
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.email" placeholder="Email: abc@xyz.com">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">Email</label> -->
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="sample2" style="color:#000" ng-model="vm.contact_number" placeholder="Contact Number">
+                <!-- <label class="mdl-textfield__label" for="sample2" style="color:#000">Contact No.</label> -->
+                <span class="mdl-textfield__error" style="color:#000">Input is not a valid contact no.</span>
+            </div>
+
+  </div>
+  <div class="form-group">
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.address_line_1" placeholder="Address: Line 1">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">Address Line 1</label> -->
+            </div>
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.address_line_1" placeholder="Address: Line 2">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">Address Line 2</label> -->
+            </div>
+  </div>
+  <div class="form-group">
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.city" placeholder="City">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">City</label> -->
+            </div>
+
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.state" placeholder="State">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">State</label> -->
+            </div>
+
+
+            <div class="mdl-textfield mdl-js-textfield">
+                <input class="mdl-textfield__input" type="text" id="sample1" style="color:#000" ng-model="vm.country" placeholder="Country">
+                <!-- <label class="mdl-textfield__label" for="sample1" style="color:#000">Country</label> -->
+            </div>
+  </div>
+
+  <div class="form-group">
+    <center>
+    <button type="submit" class="btn btn-success">
+      Submit
+    </button>
+    </center>
+  </div>
+</form>
+</center>
