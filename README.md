@@ -1,6 +1,6 @@
 # EntityManagement
 
-A role based entity management dashboard which helps you organise entity data from variety of fields such as restaurants, retail stores, real-estate brokers, banks,etc. 
+A role based entity management dashboard which helps you organise data of entities from variety of fields such as restaurants, retail stores, real-estate brokers, banks,etc. 
 
 The dashboard is equipped with a lot of essential features such as 
  - Location based mapping of entities
