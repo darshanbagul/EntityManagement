@@ -82,17 +82,17 @@ WSGI_APPLICATION = 'RetailPartners.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
-        'PASSWORD': 'tprodrdbs',
+        'NAME': 'entity_management',
+        'USER': YOUR_DB_USERNAME,
+        'PASSWORD': YOUR_DB_PASSWORD,
         'HOST': 'localhost',
         'PORT': '3306',
     },
-    'trestor': {
+    'production': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'test',
-        'USER': 'root',
-        'PASSWORD': 'tprodrdbs',
+        'NAME': 'entity_management',
+        'USER': YOUR_DB_USERNAME,
+        'PASSWORD': YOUR_DB_PASSWORD,
         'HOST': 'localhost',
         'PORT': '3306',
     },

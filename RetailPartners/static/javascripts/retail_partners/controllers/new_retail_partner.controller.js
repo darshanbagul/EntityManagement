@@ -113,9 +113,9 @@
 
     function uploadImagesS3(files){
       if(files){
-        AWS.config.update({accessKeyId: 'AKIAJP7W6Y6BHJL5JYAQ', secretAccessKey: 'MLfjpjzoWb6XRwAOwVBxQFgRf75CzY456NWYrEL2'});
+        AWS.config.update({accessKeyId: YOUR_S3_KEY_ID, secretAccessKey: YOUR_S3_ACCESS_KEY});
         AWS.config.region = 'ap-southeast-1';
-        var bucket = new AWS.S3({params: {Bucket: 'retail-partners-images'}});
+        var bucket = new AWS.S3({params: {Bucket: BUCKET_NAME}});
         for(var i=0;i<files.length;i++) {
           var file = dataURItoBlob(files[i]['resized']['dataURL']);
           var break_url = files[i]['url'].split('/')

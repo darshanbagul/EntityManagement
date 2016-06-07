@@ -31,7 +31,7 @@
           <!-- Wrapper for slides -->
           <div class="carousel-inner">
               <div class="item" ng-class="{active:!$index}" ng-repeat="photo in vm.retailPartner.images">
-                  <img src="https://s3-ap-southeast-1.amazonaws.com/retail-partners-images/{{ photo }}" class="img-responsive">
+                  <img src="https://s3-ap-southeast-1.amazonaws.com/emdimages/{{ photo }}" class="img-responsive">
               </div>
           </div>
 <!--           <div class="carousel-inner" role="listbox">
@@ -77,11 +77,11 @@
               <p class="profile__tagline">Business Name: {{ vm.retailPartner.business_name }}</p>
               <p class="profile__tagline">Contact: {{ vm.retailPartner.contact_number }}</p>
               <!-- <p class="profile__tagline">Retail Partner Id: {{ vm.retailPartner.id }}</p> -->
-              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==0">Entity Category: Not asked</p>
-              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==1">Entity Category: Retail Partner</p>
-              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==2">Entity Category: Senior Retail Partner</p>
-              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==3">Entity Category: Executive Retail Partner</p>
-              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==4">Entity Category: Business Partner</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==0">Entity Category: Type-0</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==1">Entity Category: Type-1</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==2">Entity Category: Type-2</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==3">Entity Category: Type-3</p>
+              <p class="profile__tagline" ng-if="vm.retailPartner.retail_partner_category==4">Entity Category: Type-4</p>
             </div>
         </div>
         <div class="jumbotron profile__header col-sm-12">
