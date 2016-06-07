@@ -33,7 +33,7 @@
       var authenticatedAccount = Authentication.getAuthenticatedAccount();
       console.log(authenticatedAccount);
       if (!authenticatedAccount) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('You are not authorized to view this page.');
       } 
 
@@ -58,7 +58,7 @@
         * @desc Show error snackbar
         */
       function retailPartnersErrorFn(data, status, headers, config) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('Error fetching retail partner');
       }
     }
@@ -71,7 +71,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been deactivated');
       }
 
@@ -94,7 +94,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been deactivated');
       }
 
@@ -116,7 +116,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been deactivated');
       }
 

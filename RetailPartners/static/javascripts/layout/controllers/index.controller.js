@@ -42,7 +42,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function deactivationSuccess(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partners deactivation request successfull!');
       }
 
@@ -85,7 +85,7 @@
       });
 
       $scope.openProfile = function(){
-        window.location = '/retail_partner/' + this.retail_partner.id;
+        window.location = '/emd/retail_partner/' + this.retail_partner.id;
       }
       /**
       * @name retailPartnersSuccessFn

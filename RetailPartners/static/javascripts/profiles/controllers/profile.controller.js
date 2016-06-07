@@ -20,7 +20,7 @@
     vm.profile = undefined;
     vm.retailPartners = [];
     vm.openProfile = function(rp_id){
-      window.location = '/retail_partner/' + rp_id;
+      window.location = '/emd/retail_partner/' + rp_id;
     }
     activate();
 
@@ -48,7 +48,7 @@
       * @desc Redirect to index and show error Snackbar
       */
       function profileErrorFn(data, status, headers, config) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('That user does not exist.');
       }
 

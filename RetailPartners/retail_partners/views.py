@@ -65,9 +65,12 @@ def update_rp_data(request):
     try:    
         rp_data.pop('author')
         map_retail_partner_images(rp_data['files'], rp_data['id'])
-        rp_data.pop('images')
     except Exception as e:
         print str(e)
+    try:
+        rp_data.pop('images')
+    except Exception as e:
+        print str(e)        
     try:
         rp_data.pop('files')
     except Exception as e:

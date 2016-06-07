@@ -36,12 +36,12 @@
 
       // Redirect if not logged in
       if (!authenticatedAccount) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('You are not authorized to view this page.');
       } else {
         // Redirect if logged in, but not the owner of this profile.
         if (authenticatedAccount.username !== username) {
-          $location.url('/');
+          $location.url('/emd');
           Snackbar.error('You are not authorized to view this page.');
         }
       }
@@ -61,7 +61,7 @@
       * @desc Redirect to index
       */
       function profileErrorFn(data, status, headers, config) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('That user does not exist.');
       }
     }
@@ -81,7 +81,7 @@
       */
       function profileSuccessFn(data, status, headers, config) {
         Authentication.unauthenticate();
-        window.location = '/';
+        window.location = '/emd';
 
         Snackbar.show('Your account has been deleted.');
       }

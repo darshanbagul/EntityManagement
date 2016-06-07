@@ -80,7 +80,7 @@
                         <th class="col-md-2" ng-click="$event.stopPropagation()"><input type="checkbox" checklist-model="vm.checked_items" checklist-value="retail_partner.id">&nbsp;&nbsp;{{retail_partner.contact_name}}</th>
                         <td class="col-md-2">{{retail_partner.business_name}}</td>
                         <td class="col-md-2">{{retail_partner.created_at  | date:'dd-MM-yyyy'}}</td>
-                        <td class="col-md-2" ng-click="$event.stopPropagation()"><a href="/retail_partners/{{retail_partner.city}}">{{retail_partner.city}}</a></td>
+                        <td class="col-md-2" ng-click="$event.stopPropagation()"><a href="/emd/retail_partners/{{retail_partner.city}}">{{retail_partner.city}}</a></td>
                         <td class="col-md-2">{{retail_partner.author.username}}</td>
                         <!-- <td class="col-md-2">{{retail_partner.status===2 ? "Active" : "Inactive"}}</td> -->
                         <td class="col-md-2" ng-if="retail_partner.status==2">Active</td>

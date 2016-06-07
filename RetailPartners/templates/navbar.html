@@ -7,21 +7,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="/">Entity Management Dashboard</a>
+      <a class="navbar-brand" href="/emd">Entity Management Dashboard</a>
     </div> <!-- ./navbar-header -->
 
     <div class="collapse navbar-collapse" id="not-google-plus-nav">
       <ul class="nav navbar-nav pull-right">
         {% if user.is_authenticated %}
           {% if user.is_admin %}
-            <li><a href="/+{{ user.username }}/validations">Validations</a></li>
+            <li><a href="/emd/+{{ user.username }}/validations">Validations</a></li>
           {% endif %}
-          <li><a href="/+{{ user.username }}">+{{ user.username }}</a></li>
-          <li><a href="/+{{ user.username }}/settings">Settings</a></li>
+          <li><a href="/emd/+{{ user.username }}">+{{ user.username }}</a></li>
+          <li><a href="/emd/+{{ user.username }}/settings">Settings</a></li>
           <li><a href="javascript:void(0)" ng-click="vm.logout()">Logout</a></li>
         {% else %}
-          <li><a href="/login">Login</a></li>
-          <li><a href="/register">Register</a></li>
+          <li><a href="/emd/login">Login</a></li>
+          <li><a href="/emd/register">Register</a></li>
         {% endif %}
       </ul>
     </div> <!-- /.collapse.navbar-collapse -->

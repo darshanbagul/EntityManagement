@@ -20,7 +20,7 @@
     vm.profile = undefined;
     vm.retailPartners = [];
     vm.openProfile = function(rp_id){
-      window.location = '/retail_partner/' + rp_id + '/validate';
+      window.location = '/emd/retail_partner/' + rp_id + '/validate';
     }
     vm.review_data_entry = review_data_entry;
     vm.validate = validate;
@@ -39,7 +39,7 @@
 
       // Redirect if not logged in
       if (!authenticatedAccount || !authenticatedAccount.is_admin) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('You are not authorized to view this page.');
       }
 
@@ -75,7 +75,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been sent for review');
       }
 
@@ -99,7 +99,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been deactivated');
       }
 
@@ -123,7 +123,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been deactivated!');
       }
 
@@ -147,7 +147,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been reactivated!');
       }
 
