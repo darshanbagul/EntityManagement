@@ -61,7 +61,6 @@ def get_city_profile(request):
 
 def update_rp_data(request):
     rp_data = json.loads(request.body)
-    print rp_data
     try:    
         rp_data.pop('author')
         map_retail_partner_images(rp_data['files'], rp_data['id'])
