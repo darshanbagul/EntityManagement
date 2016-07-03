@@ -38,7 +38,7 @@
     * @memberOf RetailPartners.retailPartners.services.retailPartners
     */
     function all() {
-      return $http.get('/api/v1/retail_partners/');
+      return $http.get('/emd/api/v1/retail_partners/');
     }
 
 
@@ -50,7 +50,7 @@
     * @memberOf RetailPartners.retailPartners.services.retailPartners
     */
     function create(vm) {
-      return $http.post('/api/v1/retail_partners/', {
+      return $http.post('/emd/api/v1/retail_partners/', {
         contact_name: vm.contact_name,
         business_name: vm.business_name,
         email:vm.email,
@@ -73,7 +73,7 @@
     }
 
     function send_mail(vm) {
-      return $http.post('/send_mail', {
+      return $http.post('/emd/send_mail', {
         email: vm.email,
         message: vm.message,
         subject: vm.subject
@@ -88,51 +88,51 @@
      * @memberOf RetailPartners.retailPartners.services.retailPartners
      */
     function get(username) {
-      return $http.get('/api/v1/accounts/' + username + '/retail_partners/');
+      return $http.get('/emd/api/v1/accounts/' + username + '/retail_partners/');
     }
 
     function fetch(id){
-      return $http.get('/get_rp_profile?id=' + id);
+      return $http.get('/emd/get_rp_profile?id=' + id);
     }
 
     function update(retail_partner) {
-      return $http.put('/retail_partner/update', retail_partner);
+      return $http.put('/emd/retail_partner/update', retail_partner);
     }
 
     function destroy(id){
-      return $http.post('/deactivate', {
+      return $http.post('/emd/deactivate', {
         deactivate_list: [id]
       }); 
     }
 
     function deactivate_bulk(deactivate_list){
-      return $http.post('/deactivate', {
+      return $http.post('/emd/deactivate', {
         deactivate_list: deactivate_list
       });
     }
 
     function deactivate_admin(id){
-      return $http.get('/deactivate_admin?id=' + id); 
+      return $http.get('/emd/deactivate_admin?id=' + id); 
     }
 
     function restore(id){
-      return $http.get('/reactivate?id=' + id); 
+      return $http.get('/emd/reactivate?id=' + id); 
     }
 
     function restore_admin(id){
-      return $http.get('/reactivate_admin?id=' + id); 
+      return $http.get('/emd/reactivate_admin?id=' + id); 
     }
 
     function get_data_approval(){
-      return $http.get('/fetch_data_for_validation');
+      return $http.get('/emd/fetch_data_for_validation');
     }
 
     function validate(id){
-      return $http.get('/validate?id=' + id); 
+      return $http.get('/emd/validate?id=' + id); 
     }
 
     function send_for_review(id){
-      return $http.get('/send_for_review?id=' + id); 
+      return $http.get('/emd/send_for_review?id=' + id); 
     }
   }
 })();

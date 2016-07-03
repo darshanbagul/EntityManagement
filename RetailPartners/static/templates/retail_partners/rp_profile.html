@@ -65,7 +65,7 @@
         <div class="jumbotron profile__header col-sm-12">
           <a href="" class="glyphicon glyphicon-envelope" style="float: left;font-size: 24px;" ng-dialog="/static/templates/communication/email_template.html" ng-dialog-controller="EmailClient as vm" ng-click="vm.preventSubmit($event)"></a>&nbsp;&nbsp;
           <a href="" ng-click="vm.destroy()" ng-confirm-click="Do you want to request deletion of this Retail Partner?" class="glyphicon glyphicon-trash" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 2"></a>&nbsp;&nbsp;
-          <a href="/retail_partner/{{ vm.retailPartner.id }}/edit" class="glyphicon glyphicon-edit" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 2 || vm.retailPartner.status== 4 || vm.retailPartner.status== 1 || vm.retailPartner.status== 5"></a>&nbsp;&nbsp;
+          <a href="/emd/retail_partner/{{ vm.retailPartner.id }}/edit" class="glyphicon glyphicon-edit" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 2 || vm.retailPartner.status== 4 || vm.retailPartner.status== 1 || vm.retailPartner.status== 5"></a>&nbsp;&nbsp;
           <a href="" ng-click="vm.restore()" ng-confirm-click="Do you want to request activation of this Retail Partner?" class="glyphicon glyphicon-refresh" style="float: right;font-size: 24px;" ng-show="(vm.retailPartner.status)==3"></a>
           <h2 class="profile__username"> Personal Details </h2>
             <div class="col-xs-12 col-sm-6">

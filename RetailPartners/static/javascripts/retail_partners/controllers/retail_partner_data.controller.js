@@ -60,7 +60,7 @@
       * @desc Redirect to index
       */
       function retailPartnersErrorFn(data, status, headers, config) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('That user does not exist.');
       }
     }
@@ -79,7 +79,7 @@
       * @desc Redirect to index and display success snackbar
       */
       function profileSuccessFn(data, status, headers, config) {
-        window.location = '/';
+        window.location = '/emd';
         Snackbar.show('Retail Partner has been deactivated');
       }
 
@@ -143,7 +143,7 @@
       */
       function profileSuccessFn(data, status, headers, config) {
         Snackbar.show('Your profile has been updated.');
-        window.location = '/';
+        window.location = '/emd';
       }
 
 

@@ -34,7 +34,7 @@
       * @desc Redirect to index
       */
       function retailPartnersErrorFn(data, status, headers, config) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('That user does not exist.');
       }
     }

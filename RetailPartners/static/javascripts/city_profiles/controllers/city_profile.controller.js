@@ -20,7 +20,7 @@
     vm.profile = undefined;
     vm.retailPartners = [];
     vm.openProfile = function(rp_id){
-      window.location = '/retail_partner/' + rp_id;
+      window.location = '/emd/retail_partner/' + rp_id;
     }
     activate();
 
@@ -33,10 +33,11 @@
       // var username = $routeParams.username.substr(1);
       var authenticatedAccount = Authentication.getAuthenticatedAccount();
       if (!authenticatedAccount) {
-        $location.url('/');
+        $location.url('/emd');
         Snackbar.error('You are not authorized to view this page.');
       } 
       var city_name = $routeParams.city;
+      console.log(city_name);
       CityProfile.get(city_name).then(retailPartnersSuccessFn, retailPartnersErrorFn);
       /**
       * @name profileSuccessProfile

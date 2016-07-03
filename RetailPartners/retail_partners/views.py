@@ -64,9 +64,12 @@ def update_rp_data(request):
     try:    
         rp_data.pop('author')
         map_retail_partner_images(rp_data['files'], rp_data['id'])
-        rp_data.pop('images')
     except Exception as e:
         print str(e)
+    try:
+        rp_data.pop('images')
+    except Exception as e:
+        print str(e)        
     try:
         rp_data.pop('files')
     except Exception as e:
@@ -158,7 +161,7 @@ def send_mail(request):
             subject = data['subject']
             message = data['message']
             mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
-            message = {'from_email': SENDER_EMAIL,'from_name': 'Trestor','subject': subject,'text': message,'to': [{'email': email,'type': 'to'}]}
+            message = {'from_email': SENDER_EMAIL,'from_name': 'CodeBull','subject': subject,'text': message,'to': [{'email': email,'type': 'to'}]}
             result = mandrill_client.messages.send(message=message, async=False, ip_pool='Main Pool')
             print result
         return HttpResponse('Email Sent Successfully!')

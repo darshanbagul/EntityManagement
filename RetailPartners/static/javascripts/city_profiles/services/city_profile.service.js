@@ -33,7 +33,7 @@
     */
     function get(city_name) {
       console.log(city_name);
-      return $http.get('/get_city_profile?city=' + city_name);
+      return $http.get('/emd/get_city_profile?city=' + city_name);
     }
   }
 })();

@@ -10,7 +10,7 @@
     <div class="row">
       <div class="col-xs-12 col-sm-6">
         <div class="jumbotron profile__header col-sm-12">
-          <a href="/retail_partner/{{ vm.retailPartner.id }}/edit" class="glyphicon glyphicon-edit" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
+          <a href="/emd/retail_partner/{{ vm.retailPartner.id }}/edit" class="glyphicon glyphicon-edit" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
           <a href="" ng-click="vm.review_data_entry()" ng-confirm-click="Are you sure this data is erroneous?" class="glyphicon glyphicon-ban-circle" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
           <a href="" ng-click="vm.validate()" ng-confirm-click="Did you check all the fields?" class="glyphicon glyphicon-check" style="float: right;font-size: 24px;" ng-show="vm.retailPartner.status== 1"></a>&nbsp;&nbsp;&nbsp;&nbsp;
           <a href="" ng-click="vm.restore()" ng-confirm-click="Do you want to activate this Retail Partner?" class="glyphicon glyphicon-refresh" style="float: right;font-size: 24px;" ng-show="(vm.retailPartner.status)==6"></a>&nbsp;&nbsp;&nbsp;&nbsp;
