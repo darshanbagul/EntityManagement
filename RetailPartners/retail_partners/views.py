@@ -162,7 +162,7 @@ def send_mail(request):
             subject = data['subject']
             message = data['message']
             mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
-            message = {'from_email': SENDER_EMAIL,'from_name': 'Trestor','subject': subject,'text': message,'to': [{'email': email,'type': 'to'}]}
+            message = {'from_email': SENDER_EMAIL,'from_name': 'CodeBull','subject': subject,'text': message,'to': [{'email': email,'type': 'to'}]}
             result = mandrill_client.messages.send(message=message, async=False, ip_pool='Main Pool')
             print result
         return HttpResponse('Email Sent Successfully!')
