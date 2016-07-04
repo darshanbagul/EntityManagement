@@ -31,10 +31,12 @@
     function activate() {
       // var username = $routeParams.username.substr(1);
       var authenticatedAccount = Authentication.getAuthenticatedAccount();
+      vm.is_auth = 1;
       console.log(authenticatedAccount);
       if (!authenticatedAccount) {
-        $location.url('/emd');
-        Snackbar.error('You are not authorized to view this page.');
+        vm.is_auth = 0;
+        // $location.url('/emd');
+        // Snackbar.error('You are not authorized to view this page.');
       } 
 
       var rp_id = $routeParams.id;
